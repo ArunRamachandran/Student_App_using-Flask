@@ -1,0 +1,16 @@
+<!-- extended from base layout -->
+
+{% extends "base.html" %}
+{% block content %}
+	<center>
+		<form action="/insert" method="POST" style="background-image: url('https://www.isolutiononline.com/images/career-bg-image.jpg'); height: 600px;" >
+		<h1>Student App</h1>
+		<p></p>
+		<h2>Log In</h2>
+		<p></p>
+		<h3>Enter Your UserID:</h3>
+		<p><input type="text" name="userid"></p>
+		<p><input type="submit" name="submit-buttom" value="LogIn">
+		</form>
+	</center>
+{% endblock %}

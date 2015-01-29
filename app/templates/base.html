@@ -1,0 +1,28 @@
+<html>
+	<head>
+		{% if title %}
+		<title>{{ title }} - Student App</title>
+		{% else %}
+		<title>Student App</title>
+		{% endif %}
+		<link rel="stylesheet" href="style.css"> 
+	</head>
+	<body>
+		<center>
+		<div> <a href="/login">Home</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/about">About</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/view">View</a></div>
+		<hr>
+		<!-- Extra code begin from here -->
+		{% with messages = get_flashed_messages() %}
+			{% if messages %}
+			<ul>
+			{% for message in messages %}
+				<li>{{ message }}</li>
+			{% endfor %}
+			</ul>
+			{% endif %}
+		{% endwith %}
+		<!-- Extra code end here -->
+		{% block content %}{% endblock %}
+		</center>
+	</body>
+</html>

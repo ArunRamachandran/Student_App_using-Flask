@@ -1,0 +1,26 @@
+<!-- extended from base layout -->
+{% extends "base2.html" %}
+
+{% block content %}
+	<p></p>
+	<h1>Student Details</h1>
+	<p></p>
+	<table boarder="1" style="width:100%">
+		<tr>
+			<th style="color: green;">Student Name</th>
+			<th style="color: green;">Mark Obtained</th>
+		</tr>
+
+	{% for row in rows %}
+	
+		<tr>
+		{% for ro in row %}
+			<th>{{ ro }}</th>
+		{% endfor %}	
+		</tr>
+		
+	{% endfor %}
+
+	</table>
+{% endblock %}
+		

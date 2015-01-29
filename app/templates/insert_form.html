@@ -1,0 +1,14 @@
+<!-- extended from base layout-->
+
+{% extends "base2.html" %}
+{% block content %}
+	<center>
+		<h2>Enter Deatils of the Student</h2>
+		<form action="/process" method="POST">
+			<p>Student Name :
+			<input type="text" name="sname"></p>
+			<p>Mark&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;<input type="text" name="mark"></p>
+			<p><input type="submit" name="my_form" value="submit">
+		</form>
+	</center>
+{% endblock %}

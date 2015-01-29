@@ -1,0 +1,17 @@
+<html>
+	<head>
+		{% if title %}
+		<title>{{ title }} - Student App</title>
+		{% else %}
+		<title>Student App</title>
+		{% endif %}
+		
+	</head>
+	<body>
+		<center>
+		<div><a href="/login">Home</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/about">About</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/view">View</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/login">LogOut</a></div>
+		<hr>
+		{% block content %}{% endblock %}
+		</center>
+	</body>
+</html>

@@ -1,0 +1,41 @@
+<!-- extended from base layout -->
+{% extends "base.html" %}
+
+{% block content %}
+
+<script type="text/javascript">
+function set_openid(openid, pr)
+{
+	u = openid.search('<username>')
+	if (u != -1) {
+		//openid requires username
+		user = prompt('Enter your '+ pr + 'username:')
+		openid = openid.substr(0, u) + user
+	}
+	form = document.forms['login'];
+	form.elements['openid'].value = openid
+}
+</script>
+	<form action="/insert" method="post" style="background-image: url('https://www.isolutiononline.com/images/career-bg-image.jpg'); height: 600px;" name='openid'>
+	
+	<h1>Student Details</h1>
+
+	<!--form action="/insert" method="post" name="log in" style="background-color:#3385FF; width: 500px;" -->
+		<h2>Log In</h2>
+		{{ form.hidden_tag() }}
+		
+		<p>
+			Please enter your UserID:<br>
+			{{ form.openid(size=50) }}<br>
+			{% for error in form.openid.errors %}
+			{{ form.validate() }}
+			
+				<span style="color: red;">[{{ error }}]</span>
+				{% endfor %} <br>
+		</p>
+		<p>{{ form.remember_me }} Remember Me</p>
+		<p><input type="submit" value="SIgn In"></p>
+	</form>
+
+	
+{% endblock %}
